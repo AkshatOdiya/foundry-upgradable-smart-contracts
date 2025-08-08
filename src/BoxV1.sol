@@ -26,5 +26,9 @@ contract BoxV1 is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         return 1;
     }
 
+    /*
+    Abstract contracts have some of their functions defined, and others undefined. These contracts expect their child classes to implement the undefined functions.
+    An example of an undefined function within `UUPSUpgradeable` would be `_authorizeUpgrade`
+    */
     function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 }
